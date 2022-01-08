@@ -13,6 +13,11 @@ body {
     position: relative;
 }
 
+::placeholder {
+    text-align: center;
+    color: #FDC00D;
+}
+
 h1 {
     font-size: 22px;
     font-weight: 800;
@@ -124,12 +129,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
     bottom: 0;
     right: 0;
     left: 0;
     height: 10vh;
     z-index: 100;
     background-color: white;
+    flex-wrap: wrap;
 }
 
 .btn-footer {
@@ -182,9 +190,6 @@ header {
     padding: 6px 6px;
 }
 
-::placeholder {
-    color: #FDC00D;
-}
 
 
 /******   MAIN SECTION    ******/
@@ -561,6 +566,10 @@ header {
         min-width: 320px;
         min-height: 170px;
     }
+
+    .logo{
+        width: 220px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -599,6 +608,19 @@ header {
     #searchInput {
         border-radius: 5px;
     }
+
+    footer {
+        height: auto;
+        flex-direction: column;
+        margin: auto;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
 }
 
 @media (max-width: 250px) {
@@ -647,15 +669,5 @@ header {
 
     .logo {
         width: 150px;
-    }
-
-    footer {
-        flex-direction: column;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    ::placeholder {
-        text-align: center;
     }
 }
