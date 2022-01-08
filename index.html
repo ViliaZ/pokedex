@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+
+
+</head>
+
+
+<body onload="loadPokedex()">
+    <header>
+        <img class="logo" src="./img/logo.png" alt="Pokemon">
+    </header>
+
+
+    <section id="pokemon-collection">
+        <!-- render Pokemon Cards here -->
+    </section>
+
+
+    <div id="exitCanvas" class="d-none" onclick="closeDetailCard()">
+    </div>
+
+    <!-- prevent that a click on this element is closing the window stopPropagation (do not execute closeDeteailCard()) -->
+    <div id="pokemonDetailed" class="d-none" onclick="event.stopPropagation">
+    </div>
+
+
+    <footer id="footer">
+        <button class="btn-footer" onclick="loadPokedex()">Load more</button>
+        <p style="color: #FDC00D"> &nbsp or &nbsp</p>
+
+
+        <div class="search">
+            <input id="searchInput" onkeyup="searchPokemon()" type="text" placeholder=" Find Pokemon">
+            <!-- <button id ="btn-search" class="btn-footer">Search</button> -->
+        </div>
+
+
+    
+    </footer>
+
+</body>
+
+</html>
