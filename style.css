@@ -205,7 +205,7 @@ header {
     gap: 1.5vw;
     width: 100%;
     max-width: 1300px;
-    height: 70vH;
+    min-height: 70vH;
     padding: 15px;
     overflow-y: scroll;
 }
@@ -314,26 +314,39 @@ header {
     transform: translateX(-50%) scale(1.1);
     /* transition: ease-in-out 95ms; */
     filter: drop-shadow(2px 4px 8px hsla(0deg, 0%, 0%, 0.5));
-    animation: move 1250ms linear infinite;
+    animation: move 1450ms linear infinite;
 
 }
 
 @keyframes move {
     0% {
+        transform: translateY(-2%)  translateX(-50%) scale(1.1);
+        filter: drop-shadow(2px 4px 8px rgba(83, 83, 83, 0.4));
+    }
+    50% {
+        transform: translateY(-4%) translateX(-50%) scale(1.1);
+        filter: drop-shadow(2px 12px 8px rgba(83, 83, 83, 0.5));
+    }
+    100% {
+        transform: translateY(-2%) translateX(-50%) scale(1.1);
+        filter: drop-shadow(2px 4px 8px rgba(83, 83, 83, 0.45));
+    }
+}
+/*
+@keyframes move {
+    0% {
         bottom: -40px;
         filter: drop-shadow(2px 4px 8px rgba(83, 83, 83, 0.4));
     }
-
     50% {
         bottom: -36px;
         filter: drop-shadow(2px 12px 8px rgba(83, 83, 83, 0.5));
     }
-
     100% {
         bottom: -39px;
         filter: drop-shadow(2px 4px 8px rgba(83, 83, 83, 0.45));
     }
-}
+} */
 
 .detail-card-top {
     display: flex;
@@ -594,9 +607,13 @@ header {
         gap: 1em;
     }
 
+    .img-background-summarycard {
+        max-width: unset; 
+    }
+
     .card-summary {
-        min-width: 200px;
-        min-height: 107px;
+        min-width: unset;
+        min-height: 150px;
     }
 
     .search {
@@ -631,7 +648,7 @@ header {
     }
 
     #pokemonDetailed {
-        min-width: 250px;
+        min-width: unset;
         padding-bottom: 10px;
     }
 
@@ -669,5 +686,13 @@ header {
 
     .logo {
         width: 150px;
+    }
+
+    .card-summary {
+        width: unset;
+    }
+
+    .img-background-summarycard{
+        background-image: none;
     }
 }

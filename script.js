@@ -2,12 +2,10 @@ let loadedPokemons = [];  // main array for initial Landingpage
 let offset = 0;  // start point where fetching begins, increases with scrolling of page and loading more pokemon
 let limit = 20;
 
-
 /**
  * FETCH source:  pokeapi.co api
  * @returns: Pokemon data >> fill Array "loadedPokemons"
  */
-
 async function loadPokedex() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
     let response = await fetch(url);
@@ -28,7 +26,6 @@ async function loadPokedex() {
  * @param:  Text from Inputfield
  * @return: Array containing filtered Pokemon >> can be used for renderPokedex
  */
-
 function searchPokemon() {
     // prevent a case-sensitive search --> transform search input to lower case
     let searchInput = document.getElementById('searchInput').value.toLowerCase();
@@ -46,8 +43,9 @@ function searchPokemon() {
 }
 
 function clearInputField() {
-    let searchInput = document.getElementById('searchInput');
-    searchInput.value = "";
+    console.log('clearinputfield auskommentiet')
+    // let searchInput = document.getElementById('searchInput');
+    // searchInput.value = "";
 }
 
 
@@ -57,7 +55,6 @@ function clearInputField() {
  *  @param: 1.) complete Pokedex Array (= "loadedPokemons") OR 2.) filtered Array via search Results
  *  @return: Final Summary Cards of Pokemon 
 */
-
 function renderLoadedPokemons() {
     let initialCanvas = document.getElementById('pokemon-collection');
     initialCanvas.innerHTML = '';
@@ -82,12 +79,10 @@ function showDetailCard(i) {  // click on any summary Card on main canvas
     exitCanvas.classList.remove('d-none');
     mainCanvasPokCollection.style.filter = 'blur(20px) grayscale(0.5)';
 
-
     detailCanvas.innerHTML = '';
     detailCanvas.innerHTML = generatePokDetails(i);
 
     hideFooter();
-    // adjustColorsDetailCard(i);
 }
 
 function closeDetailCard() {  // click anywhere on the exitCanvas, stop Event Propagation on currently open pokemon detail card
@@ -100,7 +95,7 @@ function closeDetailCard() {  // click anywhere on the exitCanvas, stop Event Pr
     mainCanvasPokCollection.style.filter = 'blur(0) grayscale(0)';
 
     showFooter();
-    renderLoadedPokemons();  // if you have used the search before, we want to always return to a full collection of pokemon
+    renderLoadedPokemons();  // to return from a search, we want to always return to a full collection of pokemon
     clearInputField();
 }
 
@@ -113,19 +108,18 @@ function showFooter() {  // when detail card is closed
 }
 
 
+
+
 // HTML RETURN FUNCTIONS
 
 /**
- * @param: {i} >> from renderPokedex for loop -->  PokemonNumber in currrent Array
+ * @param: {i} >> from renderPokedex() for loop -->  PokemonNumber in currrent Array
  * @returns HTML Code for each Summary-Card
  */
-
 function generateSummaryCard(i) {
-    //make first Letter of PokemonName a Capital Letter
     let capitalizedName = loadedPokemons[i]['name'].charAt(0).toUpperCase() + loadedPokemons[i]['name'].slice(1);
     let pokemonType = loadedPokemons[i]['types'][0]['type']['name'];
 
-    //HTML Code for each Summary Card >> open detail card on click
     return `
     <div id="card-summary${i}" class="card-summary img-background-summarycard bg-${pokemonType}" onclick="showDetailCard(${i})"> 
         <div class="card-summary-description">
@@ -135,7 +129,7 @@ function generateSummaryCard(i) {
         <div class="card-summary-img">
             <img loading="lazy" src="${loadedPokemons[i]['sprites']['other']['dream_world']['front_default']}">
         </div> 
-    </div>`
+    </div>`;
 }
 
 
@@ -210,6 +204,6 @@ function generatePokDetails(i) {
                     </div>
                 </div>
             </div>
-        </div>`
+        </div>`;
 }
 

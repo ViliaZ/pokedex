@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="infiniteScroll.js"></script>
 
 
 
@@ -17,14 +18,14 @@
 
 <body onload="loadPokedex()">
     <header onclick="closeDetailCard()">
-        <img  class="logo" src="./img/logo.png" alt="Pokemon">
+        <img class="logo" src="./img/logo.png" alt="Pokemon">
     </header>
 
 
     <section id="pokemon-collection">
         <!-- render Pokemon Cards here -->
     </section>
-
+    <div id="targetButton">TargetButton</div>
 
     <div id="exitCanvas" class="d-none" onclick="closeDetailCard()">
     </div>
@@ -34,19 +35,14 @@
     </div>
 
 
-    <footer id="footer">
+    <!-- <footer id="footer">
         <button class="btn-footer" onclick="loadPokedex()">Load more</button>
         <p style="color: #FDC00D"> &nbsp or &nbsp</p>
 
-
         <div class="search">
             <input id="searchInput" onkeyup="searchPokemon()" type="text" placeholder=" Find Pokemon">
-            <!-- <button id ="btn-search" class="btn-footer">Search</button> -->
         </div>
-
-
-    
-    </footer>
+    </footer> -->
 
 </body>
 
