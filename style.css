@@ -125,12 +125,11 @@ button {
 /***** FOOTER  *******/
 
 footer {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px;
-    margin-bottom: 15px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -186,7 +185,7 @@ header {
 
 #searchInput {
     border-radius: 5px 5px 5px 5px;
-    border: 1px solid #FDC00D;
+    border: 2px solid #FDC00D;
     padding: 6px 6px;
 }
 

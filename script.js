@@ -18,6 +18,7 @@ async function loadPokedex() {
     }
     offset += 20;
     renderLoadedPokemons();
+    startScrollEventlistening();
 }
 
 
